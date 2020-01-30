@@ -1,0 +1,46 @@
+@import "~bootstrap/scss/bootstrap";
+@import "_variables.scss";
+
+@mixin title {
+    font-family: 'Berkshire Swash', cursive;
+    color: $orange;
+}
+
+nav
+{
+    background-color: $black;
+    margin: auto;
+}
+
+nav>a {
+    padding: 10px;
+    text-align: center;
+}
+#connexion{
+    margin-right: 0;
+}
+.nav-link{
+@include title;
+    font-size: 1.8em;
+    vertical-align: bottom;
+}
+.dropdown-item{
+    font-family: 'Berkshire Swash', cursive;
+    color: $orange;
+    background-color: $black;
+    font-size: 1.5em;
+}
+.dropdown-menu{
+    background-color: $black;
+    border: 1px solid $orange
+}
+
+.bigtitle {
+@include title;
+    font-size: 3em;
+}
+
+#carouselExampleCaptions{
+    margin-bottom: 40px;
+}
+
