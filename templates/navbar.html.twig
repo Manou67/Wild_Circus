@@ -17,35 +17,32 @@
                 <a class="nav-link" href="{{ path('news_index') }}">Actualités<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ path('team_index') }}">Nous rencontrer<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ path('team_list') }}">Nous rencontrer<span class="sr-only">(current)</span></a>
             </li>
+            <div class="connect">
             {% if app.user %}
-                <a id="connexion" class="nav-link" href="{{ path('profile') }}">Mon profil<span class="sr-only">(current)</span></a>
-                <a id="connexion" class="nav-link" href="{{ path('app_logout') }}">Se déconnecter<span class="sr-only">(current)</span></a>
-            {% else %}
-                <a id="connexion" class="nav-link" href="{{ path('app_login') }}">Connexion<span class="sr-only">(current)</span></a>
-                <a id="connexion" class="nav-link" href="{{ path('app_register') }}">Inscription<span class="sr-only">(current)</span></a>
-            {% endif %}
-
-            {#<li class="nav-item active">
-                <a id="connexion" class="nav-link" href="{{ path('app_login') }}">Connexion<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-                <a id="connexion" class="nav-link" href="{{ path('app_register') }}">Inscription<span class="sr-only">(current)</span></a>
-            </li>#}
-            {% if is_granted('ROLE_ADMIN') %}
-                <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Compte Admin</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="{{ path('spectacle_index') }}">Gestion des spectacles</a>
-                            <a class="dropdown-item" href="{{ path('ticket_index') }}">Gestion des billets</a>
-                            <a class="dropdown-item" href="{{ path('user_index') }}">Gestion des utilisateurs</a>
-                            <a class="dropdown-item" href="{{ path('news_index') }}">Gestion de l'actualité de Wild Circus</a>
-                            <a class="dropdown-item" href="{{ path('team_index') }}">Gestion de l'équipe de Wild Circus</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <div id="admin_link">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Compte Admin</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ path('spectacle_index') }}">Gestion des spectacles</a>
+                                    <a class="dropdown-item" href="{{ path('ticket_index') }}">Gestion des billets</a>
+                                    <a class="dropdown-item" href="{{ path('user_index') }}">Gestion des utilisateurs</a>
+                                    <a class="dropdown-item" href="{{ path('news_index') }}">Gestion de l'actualité de Wild Circus</a>
+                                    <a class="dropdown-item" href="{{ path('team_index') }}">Gestion de l'équipe de Wild Circus</a>
+                                </div>
+                            </li>
                         </div>
-                    </li>
-                {% endif %}
+                    {% endif %}
+                <a id="connexion" class="nav-link" href="{{ path('profile') }}"><button class="btn btn-md btn-light">Mon profil</button><span class="sr-only">(current)</span></a>
+                <a id="connexion" class="nav-link" href="{{ path('app_logout') }}"><button class="btn btn-md btn-light">Se déconnecter</button><span class="sr-only">(current)</span></a>
+               {% else %}
+                <a id="connexion" class="nav-link" href="{{ path('app_login') }}"><button class="btn btn-md btn-light">Connexion</button><span class="sr-only">(current)</span></a>
+                <a id="connexion" class="nav-link" href="{{ path('app_register') }}"><button class="btn btn-md btn-light">Inscription</button><span class="sr-only">(current)</span></a>
+            {% endif %}
+            </div>
         </ul>
     </div>
 </nav>

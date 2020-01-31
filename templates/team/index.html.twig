@@ -1,18 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Team index{% endblock %}
+{% block title %}L'équipe{% endblock %}
 
 {% block body %}
-    <h1>Team index</h1>
+    <h1 class="titleH1">L'équipe</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Firstname</th>
+                <th>Nom</th>
+                <th>Prénom</th>
                 <th>Role</th>
-                <th>actions</th>
+                {% if is_granted('ROLE_ADMIN') %}
+                    <th>actions</th>
+                {% endif %}
+
             </tr>
         </thead>
         <tbody>
@@ -22,10 +25,14 @@
                 <td>{{ team.name }}</td>
                 <td>{{ team.firstname }}</td>
                 <td>{{ team.role }}</td>
+
+                {% if is_granted('ROLE_ADMIN') %}
                 <td>
-                    <a href="{{ path('team_show', {'id': team.id}) }}">show</a>
-                    <a href="{{ path('team_edit', {'id': team.id}) }}">edit</a>
+                    <a href="{{ path('team_show', {'id': team.id}) }}">Voir</a>
+                    <a href="{{ path('team_edit', {'id': team.id}) }}">Editer</a>
                 </td>
+                {% endif %}
+
             </tr>
         {% else %}
             <tr>
@@ -35,5 +42,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('team_new') }}">Create new</a>
+    <a href="{{ path('team_new') }}"> <button class="btn btn-md btn-light">Ajouter un nouveau membre</button></a>
 {% endblock %}
