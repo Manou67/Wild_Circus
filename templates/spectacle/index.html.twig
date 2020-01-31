@@ -3,10 +3,8 @@
 {% block title %}Nos spectacles{% endblock %}
 
 {% block body %}
-    <h1 class="table">Nos spectacles</h1>
-    {% if is_granted('ROLE_ADMIN') %}
-        <a href="{{ path('spectacle_new') }}">Create new</a>
-    {% endif %}
+    <h1 class="titleH1">Nos spectacles</h1>
+    <a href="{{ path('spectacle_new') }}"><button class="btn btn-md btn-light">Ajouter un nouveau spectacle</button></a>
     <table class="table">
         <thead>
             <tr>
@@ -14,9 +12,7 @@
                 <th>Date</th>
                 <th>Tarif</th>
                 <th>Billets disponibles</th>
-                {% if is_granted('ROLE_ADMIN') %}
                 <th>actions</th>
-                {% endif %}
             </tr>
         </thead>
         <tbody>
@@ -26,17 +22,10 @@
                 <td>{{ spectacle.date ? spectacle.date|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ spectacle.price }}€</td>
                 <td>{{ spectacle.availableTickets }}</td>
-
-                {% if is_granted('ROLE_ADMIN') %}
-                    <td>
-                        <a href="{{ path('spectacle_show', {'id': spectacle.id}) }}">show</a>
-                        <a href="{{ path('spectacle_edit', {'id': spectacle.id}) }}">edit</a>
-                    </td>
-                {% endif %}
-                {% if is_granted('USER') %}
-                    <a href="#" class="btn btn-dark">Acheter des billets</a>
-                {% endif %}
-
+                <td>
+                    <a href="{{ path('spectacle_show', {'id': spectacle.id}) }}">Voir</a>
+                    <a href="{{ path('spectacle_edit', {'id': spectacle.id}) }}">Editer</a>
+                </td>
             </tr>
         {% else %}
             <tr>
@@ -45,6 +34,4 @@
         {% endfor %}
         </tbody>
     </table>
-
-
 {% endblock %}

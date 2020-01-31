@@ -4,7 +4,7 @@
 
 {% block body %}
     <h1 class="titleH1">L'équipe</h1>
-
+    <a href="{{ path('team_new') }}"> <button class="btn btn-md btn-light">Ajouter un nouveau membre</button></a>
     <table class="table">
         <thead>
             <tr>
@@ -12,10 +12,7 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Role</th>
-                {% if is_granted('ROLE_ADMIN') %}
-                    <th>actions</th>
-                {% endif %}
-
+                <th>actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,13 +22,10 @@
                 <td>{{ team.name }}</td>
                 <td>{{ team.firstname }}</td>
                 <td>{{ team.role }}</td>
-
-                {% if is_granted('ROLE_ADMIN') %}
                 <td>
                     <a href="{{ path('team_show', {'id': team.id}) }}">Voir</a>
                     <a href="{{ path('team_edit', {'id': team.id}) }}">Editer</a>
                 </td>
-                {% endif %}
 
             </tr>
         {% else %}
@@ -42,5 +36,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('team_new') }}"> <button class="btn btn-md btn-light">Ajouter un nouveau membre</button></a>
 {% endblock %}

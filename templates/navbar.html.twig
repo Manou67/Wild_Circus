@@ -6,7 +6,7 @@
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Spectacles</a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ path('spectacle_index') }}">Nos spectacles</a>
+                    <a class="dropdown-item" href="{{ path('spectacle_list') }}">Nos spectacles</a>
                     <a class="dropdown-item" href="#">Anciens spectacles</a>
                 </div>
             </li>
@@ -14,10 +14,10 @@
                 <a class="nav-link" href="{{ path('ticket_index') }}">Billets<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ path('news_index') }}">Actualités<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ path('news_list') }}">Actualités<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ path('team_list') }}">Nous rencontrer<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{ path('team_list') }}">L'équipe Wild Circus<span class="sr-only">(current)</span></a>
             </li>
             <div class="connect">
             {% if app.user %}

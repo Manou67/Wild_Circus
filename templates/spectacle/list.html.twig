@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nos spectacles{% endblock %}
+
+{% block body %}
+    <div class="team_container">
+        <div class="card mb-4" style="max-width: 500px; height: 550px;">
+            <div class="row no-gutters justify-content-center">
+                <div class="col-md-8">
+                    <img src="/images/affiche_papillon.jpg" class="card-img" alt="Le spectacle Papillon">
+                </div>
+                <div class="col-md-16">
+                    <div class="card-body">
+                        <h5 class="card-title">Le spectacle Papillon</h5>
+                        <p class="card-text">Un spectacle unique où nos artistes acrobates mettent en lumière la beauté de la faune et la flore.</p>
+                        <a href="#" class="btn btn-dark">Acheter des billets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card mb-4" style="max-width: 500px; height: 550px;">
+            <div class="row no-gutters justify-content-center">
+                <div class="col-md-8">
+                    <img src="/images/affiche_avatar.jpg" class="card-img" alt="Le spectacle Avatar">
+                </div>
+                <div class="col-md-16">
+                    <div class="card-body">
+                        <h5 class="card-title">Le spectacle Avatar</h5>
+                        <p class="card-text">L'univers du film Avatar retranscrit dans un spectacle son et lumière époustouflant.</p>
+                        <a href="#" class="btn btn-dark">Acheter des billets</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

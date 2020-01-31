@@ -25,7 +25,7 @@ class TeamController extends AbstractController
         ]);
     }
     /**
-     * @Route("/", name="team_list", methods={"GET"})
+     * @Route("/list", name="team_list", methods={"GET"})
      */
     public function list(TeamRepository $teamRepository): Response
     {

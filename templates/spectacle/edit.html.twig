@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Spectacle{% endblock %}
+{% block title %}Editer un spectacle{% endblock %}
 
 {% block body %}
-    <h1>Edit Spectacle</h1>
+    <h1 class="titleH1">Editer un spectacle</h1>
 
     {{ include('spectacle/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('spectacle_index') }}">back to list</a>
+    <a href="{{ path('spectacle_index') }}"><button class="btn btn-md btn-light">Retour à la liste</button></a>
 
     {{ include('spectacle/_delete_form.html.twig') }}
 {% endblock %}

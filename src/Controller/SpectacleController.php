@@ -26,6 +26,16 @@ class SpectacleController extends AbstractController
     }
 
     /**
+     * @Route("/list", name="spectacle_list", methods={"GET"})
+     */
+    public function listSpectacle(SpectacleRepository $spectacleRepository): Response
+    {
+        return $this->render('spectacle/list.html.twig', [
+            'spectacles' => $spectacleRepository->findAll(),
+        ]);
+    }
+
+    /**
      * @Route("/new", name="spectacle_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
