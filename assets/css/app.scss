@@ -23,7 +23,7 @@ nav>a {
 }
 .nav-link{
 @include title;
-    font-size: 1.8em;
+    font-size: 1.5em;
     vertical-align: bottom;
 }
 .dropdown-item{
@@ -47,7 +47,7 @@ nav>a {
 }
 
 .titleH1{
-    font-size: 2em;
+    font-size: 1.8em;
     font-family: 'Miltonian Tattoo', cursive;
     color: $black;
     margin: 10px;
@@ -68,5 +68,19 @@ nav>a {
     font-size: 1.8em;
     font-family: 'Federant', cursive;
     margin: 10px;
+}
+
+#profile {
+    color: $light_orange;
+    font-size: 1.4em;
+    font-family: 'Federant', cursive;
+    margin: 10px;
+}
+
+.text_profile{
+    color: $light_orange;
+    font-size: 1.2em;
+    font-family: 'Federant', cursive;
+    margin-left: 40px;
 }
 

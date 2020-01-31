@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil{% endblock %}
+
+{% block body %}
+
+    <h1 id="profile" class="h3 mb-3" style="margin-left: 20px; margin-top: 20px">Voici les informations concernant votre profil :</h1>
+    <div class="mb-3">
+        <p class="text_profile">Votre identifiant est le suivant :  {{ email }} </p>
+        <p class="text_profile">Votre prénom :  {{ firstname }} </p>
+        <p class="text_profile">Votre nom :  {{ name }} </p>
+        <p class="text_profile">Vos spectacles réservés :  {{ spectacles }} </p>
+    </div>
+{% endblock %}

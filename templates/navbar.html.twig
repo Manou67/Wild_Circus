@@ -19,12 +19,20 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ path('team_index') }}">Nous rencontrer<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
+            {% if app.user %}
+                <a id="connexion" class="nav-link" href="{{ path('profile') }}">Mon profil<span class="sr-only">(current)</span></a>
+                <a id="connexion" class="nav-link" href="{{ path('app_logout') }}">Se déconnecter<span class="sr-only">(current)</span></a>
+            {% else %}
+                <a id="connexion" class="nav-link" href="{{ path('app_login') }}">Connexion<span class="sr-only">(current)</span></a>
+                <a id="connexion" class="nav-link" href="{{ path('app_register') }}">Inscription<span class="sr-only">(current)</span></a>
+            {% endif %}
+
+            {#<li class="nav-item active">
                 <a id="connexion" class="nav-link" href="{{ path('app_login') }}">Connexion<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a id="connexion" class="nav-link" href="{{ path('app_register') }}">Inscription<span class="sr-only">(current)</span></a>
-            </li>
+            </li>#}
             {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
